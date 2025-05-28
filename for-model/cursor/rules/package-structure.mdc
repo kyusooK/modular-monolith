@@ -3,6 +3,9 @@ description:
 globs: 
 alwaysApply: true
 ---
+
+forEach: BoundedContext
+---
 Please create the project based on the structure below.
 
 Root Structure (including root POM)
