@@ -28,7 +28,6 @@ Root Structure (including root POM)
     │   │   └── service
     │   │       └── {Aggregate name}Service.java      ← Service class responsible for logic processing in Repository
     │   └── pom.xml
-    {{/aggregates}}
     ├── mall-main/                                      ← Application entry point (main app)
     │   ├── src/
     │   │   ├── main/
