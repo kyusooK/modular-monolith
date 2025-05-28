@@ -1,4 +1,7 @@
-forEach: BoundedContext
+---
+description: 
+globs: 
+alwaysApply: true
 ---
 Please create the project based on the structure below.
 
@@ -7,24 +10,23 @@ Root Structure (including root POM)
     ├── pom.xml                                         ← Root POM (packaging: pom)
     ├── common-module/                                  ← Common domain library, shared DTOs, exceptions, configurations
     │   └── pom.xml
-    {{#aggregates}}
-    ├── {{nameCamelCase}}-module/                       ← {{nameCamelCase}} domain module
-    │   ├── src/main/java/com/example/{{nameCamelCase}}
+    ├── Aggregate-module/                       ← Aggregate domain module
+    │   ├── src/main/java/com/example/{Aggregate name}
     │   │   ├── domain
     │   │   │   │   ├── event
     │   │   │   │   │   └── Event.java                  ← Event Publish class for the results of domain state changes in the Aggregate Root
     │   │   │   │   └── repository                      
-    │   │   │   │       └── {{namePascalCase}}Repository.java   ← JPA Repository
-    │   │   │   ├── {{namePascalCase}}.java             ← Domain entity implementing DDD Aggregate Root
+    │   │   │   │       └── {Aggregate name}Repository.java   ← JPA Repository
+    │   │   │   ├── {Aggregate name}.java             ← Domain entity implementing DDD Aggregate Root
     │   │   │   ├── Enum.java                           ← Enum class forming relationship with Aggregate Root Entity
     │   │   │   ├── Entity.java                         ← Entity class forming relationship with Aggregate Root Entity
     │   │   │   └── ValueObject.java                    ← VO class forming relationship with Aggregate Root Entity
     │   │   ├── infra
-    │   │   │   └── {{namePascalCase}}Controller.java   ← Inbound Adaptor providing RESTful API endpoints
+    │   │   │   └── {Aggregate name}Controller.java   ← Inbound Adaptor providing RESTful API endpoints
     │   │   ├── handler
     │   │   │   └── EventHandler.java                   ← Event handler class that receives events and proceeds with subsequent logic
     │   │   └── service
-    │   │       └── {{namePascalCase}}Service.java      ← Service class responsible for logic processing in Repository
+    │   │       └── {Aggregate name}Service.java      ← Service class responsible for logic processing in Repository
     │   └── pom.xml
     {{/aggregates}}
     ├── mall-main/                                      ← Application entry point (main app)
