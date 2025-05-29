@@ -14,6 +14,4 @@ Root pom.xml > common-module pom.xml > domain service(domain, infra, service, ha
 
 4. When implementing classes for domain services, refer to domain-implementation-rules.mdc to identify which type of class corresponds to the one you are creating before generation.
 
-5. Once the project configuration is complete, refer to test-code-rules.mdc to generate test files.
-
-6. After test file generation is complete, run mvn install from the Root path, then move to the main-module path and run mvn spring-boot:run.
+5. After project generation is complete, run mvn install from the Root path, then move to the main-module path and run mvn spring-boot:run.
